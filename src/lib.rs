@@ -368,24 +368,20 @@ mod tests {
 		type DAG = LightDAG<EthereumPatch>;
 		let light_dag = DAG::new(0x8947a9.into());
 		// bare_hash of block#8996777 on ethereum mainnet
-		let partial_header_hash = array_bytes::hex2array_unchecked!(
+		let partial_header_hash = array_bytes::hex_into_unchecked(
 			"3c2e6623b1de8862a927eeeef2b6b25dea6e1d9dad88dca3c239be3959dc384a",
-			32
-		)
-		.into();
+		);
 		let mixh = light_dag
 			.hashimoto(
 				partial_header_hash,
-				array_bytes::hex2array_unchecked!("a5d3d0ccc8bb8a29", 8).into(),
+				array_bytes::hex_into_unchecked("a5d3d0ccc8bb8a29"),
 			)
 			.0;
 		assert_eq!(
 			mixh,
-			array_bytes::hex2array_unchecked!(
+			array_bytes::hex_into_unchecked(
 				"543bc0769f7d5df30e7633f4a01552c2cee7baace8a6da37fddaa19e49e81209",
-				32
 			)
-			.into()
 		);
 	}
 
@@ -404,15 +400,13 @@ mod tests {
 
 		let start = SystemTime::now();
 		// bare_hash of block#9666669 on ethereum mainnet
-		let partial_header_hash = array_bytes::hex2array_unchecked!(
+		let partial_header_hash = array_bytes::hex_into_unchecked(
 			"6063429cc9580b4c437d7547cdbf07df0c4bf7ab0cb6e0d6f74ab00f949f174c",
-			32
-		)
-		.into();
+		);
 		let mixh = light_dag
 			.hashimoto(
 				partial_header_hash,
-				array_bytes::hex2array_unchecked!("726446620418cc02", 8).into(),
+				array_bytes::hex_into_unchecked("726446620418cc02"),
 			)
 			.0;
 		println!(
@@ -422,11 +416,9 @@ mod tests {
 
 		assert_eq!(
 			mixh,
-			array_bytes::hex2array_unchecked!(
+			array_bytes::hex_into_unchecked(
 				"7daba05fcefc814682e0caf337800780de3f9737fac71826d90eddcedd89b1da",
-				32
 			)
-			.into()
 		);
 	}
 
@@ -434,24 +426,20 @@ mod tests {
 	fn hashimoto_should_work_on_ropsten() {
 		type DAG = LightDAG<EthereumPatch>;
 		let light_dag = DAG::new(0x672884.into());
-		let partial_header_hash = array_bytes::hex2array_unchecked!(
+		let partial_header_hash = array_bytes::hex_into_unchecked(
 			"9cb3d16b788bfc7f2569db2d1fedb5b1e9633acfe84a4eca44a9fa50979a9887",
-			32
-		)
-		.into();
+		);
 		let mixh = light_dag
 			.hashimoto(
 				partial_header_hash,
-				array_bytes::hex2array_unchecked!("9348d06003756cff", 8).into(),
+				array_bytes::hex_into_unchecked("9348d06003756cff"),
 			)
 			.0;
 		assert_eq!(
 			mixh,
-			array_bytes::hex2array_unchecked!(
+			array_bytes::hex_into_unchecked(
 				"e06f0c107dcc91e9e82de0b42d0e22d5c2cfae5209422fda88cff4f810f4bffb",
-				32
 			)
-			.into(),
 		);
 	}
 
@@ -459,24 +447,20 @@ mod tests {
 	fn hashimoto_should_work_on_ropsten_earlier() {
 		type DAG = LightDAG<EthereumPatch>;
 		let light_dag = DAG::new(0x11170.into());
-		let partial_header_hash = array_bytes::hex2array_unchecked!(
+		let partial_header_hash = array_bytes::hex_into_unchecked(
 			"bb698ea6e304a7a88a6cd8238f0e766b4f7bf70dc0869bd2e4a76a8e93fffc80",
-			32
-		)
-		.into();
+		);
 		let mixh = light_dag
 			.hashimoto(
 				partial_header_hash,
-				array_bytes::hex2array_unchecked!("475ddd90b151f305", 8).into(),
+				array_bytes::hex_into_unchecked("475ddd90b151f305"),
 			)
 			.0;
 		assert_eq!(
 			mixh,
-			array_bytes::hex2array_unchecked!(
+			array_bytes::hex_into_unchecked(
 				"341e3bcf01c921963933253e0cf937020db69206f633e31e0d1c959cdd1188f5",
-				32
 			)
-			.into()
 		);
 	}
 }
