@@ -4,7 +4,7 @@ description = "An Apache-licensed Ethash implementation."
 edition     = "2018"
 license     = "Apache-2.0"
 name        = "ethash"
-version     = "0.4.0"
+version     = "0.4.1"
 
 [dependencies]
 byteorder      = { version = "1.4", default-features = false }
