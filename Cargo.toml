@@ -1,10 +1,10 @@
 [package]
 authors     = ["Wei Tang <hi@that.world>"]
 description = "An Apache-licensed Ethash implementation."
-edition     = "2018"
+edition     = "2021"
 license     = "Apache-2.0"
 name        = "ethash"
-version     = "0.4.1"
+version     = "0.4.2"
 
 [dependencies]
 byteorder      = { version = "1.4", default-features = false }
